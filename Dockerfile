@@ -18,7 +18,7 @@ RUN npm run build-now
 # Stage 2: Production Artefact
 FROM node:18.20.5-alpine
 ENTRYPOINT ["node"]
-CMD ["node", "dist/src/app.js"]
+CMD ["dist/src/app.js"]
 LABEL author="Mae Wood"
 # Expose the port the app runs on
 EXPOSE 3000
