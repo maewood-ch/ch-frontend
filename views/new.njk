@@ -1,0 +1,57 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+  {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  <form action="/companies" method="post">
+
+    {% call govukFieldset({
+        legend: {
+            text: "Company Details",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+        }
+    }) %}
+
+      {{ govukInput({
+          label: { text: "Company Name" },
+          id: "company-name",
+          name: "companyName"
+      }) }}
+
+      {{ govukInput({
+          label: { text: "Town or City" },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-town",
+          name: "addressTown",
+          autocomplete: "address-level2"
+      }) }}
+
+      {{ govukInput({
+          label: { text: "Postcode" },
+          classes: "govuk-input--width-10",
+          id: "address-postcode",
+          name: "addressPostcode",
+          autocomplete: "postal-code"
+      }) }}
+
+      {{ govukCheckboxes({
+          name: "active",
+          fieldset: {
+              legend: { text: "Is the company active?" }
+          },
+          items: [
+              { value: "true", text: "Yes" }
+          ]
+      }) }}
+
+      {{ govukButton({ text: "Submit" }) }}
+
+    {% endcall %}
+    
+  </form>
+
+{% endblock %}

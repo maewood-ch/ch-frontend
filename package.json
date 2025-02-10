@@ -1,0 +1,27 @@
+{
+  "name": "ch-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --watch -p tsconfig.json",
+    "build-now": "tsc -p tsconfig.json",
+    "start": "nodemon ./dist/src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/govuk-frontend": "^5.7.0",
+    "@types/nunjucks": "^3.2.6",
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "govuk-frontend": "^5.8.0",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.83.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
+}
