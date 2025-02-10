@@ -1,7 +1,7 @@
 import type { Company, ForeignCompany, LimitedCompany, LimitedLiabilityPartnership, NonProfitOrganisation } from "../model/types";
 import axios, { Axios, AxiosRequestConfig } from "axios";
 
-const BASE_URL = "http://localhost:80/companies";
+const BASE_URL =process.env.TARGET_URL || "http://localhost/companies";
 let config: AxiosRequestConfig<Company> = {
     baseURL: BASE_URL,
     headers: {
