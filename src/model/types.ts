@@ -1,5 +1,3 @@
-export type
-
 export interface Company {
     companyName: string;
     registrationNumber: string | undefined;
