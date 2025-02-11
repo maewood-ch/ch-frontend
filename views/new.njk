@@ -23,20 +23,35 @@
       }) }}
 
       {{ govukInput({
-          label: { text: "Town or City" },
-          classes: "govuk-!-width-two-thirds",
-          id: "address-town",
-          name: "addressTown",
-          autocomplete: "address-level2"
+          label: { text: "Company Address" },
+          id: "company-address",
+          name: "companyAddress",
       }) }}
-
-      {{ govukInput({
-          label: { text: "Postcode" },
-          classes: "govuk-input--width-10",
-          id: "address-postcode",
-          name: "addressPostcode",
-          autocomplete: "postal-code"
-      }) }}
+     {{ govukSelect({
+       id: "type",
+       name: "type",
+       label: {
+         text: "Company Type"
+       },
+       items: [
+         {
+           value: "LTD",
+           text: "LTD"
+         },
+         {
+           value: "LLP",
+           text: "LLP",
+         },
+         {
+           value: "NPO",
+           text: "NPO"
+         },
+         {
+           value: "FXC",
+           text: "FXC"
+         }
+       ]
+     }) }}
 
       {{ govukCheckboxes({
           name: "active",

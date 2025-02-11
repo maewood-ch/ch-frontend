@@ -59,6 +59,7 @@ app.get('/companies', async (req, res) => {
             { text: company.companyName },
             { text: company.registrationNumber },
             { text: company.active },
+            { text: company.type },
             { text: company.incorporatedOn },
         ]);
         res.render('companies', {
@@ -90,9 +91,10 @@ app.post('/companies', async (req, res) => {
 
         const newCompany: Company = {
             companyName: req.body.companyName,
-            registrationNumber: "999999999",
-            registeredAddress: req.body.addressTown,
+            registrationNumber: "121212121",
+            registeredAddress: req.body.companyAddress,
             active: isActive,
+            type: req.body.companyType,
             incorporatedOn: new Date(),
         };
 

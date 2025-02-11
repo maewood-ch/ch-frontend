@@ -1,8 +1,11 @@
+export type
+
 export interface Company {
     companyName: string;
     registrationNumber: string | undefined;
     registeredAddress: string;
     active: boolean;
+    type: string;
     incorporatedOn: Date;
 }
 
